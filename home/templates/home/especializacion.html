@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Especializacion
+{% endblock title_head %}
+
+{% block h1_header %}
+Especializacion
+{% endblock h1_header %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+{% endblock content %}
+

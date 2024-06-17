@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Resultados de la búsqueda
+{% endblock title_head %}
+
+{% block h1_header %}
+Resultados de la búsqueda para "{{ query }}"
+{% endblock h1_header %}
+
+{% block content %}
+<h2>Especializaciones</h2>
+<ul>
+    {% for especializacion in results.especializaciones %}
+    <li>{{ especializacion }}</li>
+    {% empty %}
+    <li>No se encontraron especializaciones.</li>
+    {% endfor %}
+</ul>
+
+<h2>Cursos</h2>
+<ul>
+    {% for curso in results.cursos %}
+    <li>{{ curso }}</li>
+    {% empty %}
+    <li>No se encontraron cursos.</li>
+    {% endfor %}
+</ul>
+
+<h2>Profesores</h2>
+<ul>
+    {% for profesor in results.profesores %}
+    <li>{{ profesor }}</li>
+    {% empty %}
+    <li>No se encontraron profesores.</li>
+    {% endfor %}
+</ul>
+
+<h2>Alumnos</h2>
+<ul>
+    {% for alumno in results.alumnos %}
+    <li>{{ alumno }}</li>
+    {% empty %}
+    <li>No se encontraron alumnos.</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
